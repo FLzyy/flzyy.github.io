@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import styles from "@site/src/components/Project/index.module.css";
 
