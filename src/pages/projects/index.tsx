@@ -28,7 +28,7 @@ export default function Projects(): JSX.Element {
       />
       <Project
         name="timebench"
-        tags={["new!", "npm", "backend", "ts", "js"]}
+        tags={["npm", "backend", "ts", "js"]}
         description="A small helper class made to help in benchmarking and timing."
         link="https://github.com/FLzyy/timebench"
       />
@@ -38,6 +38,18 @@ export default function Projects(): JSX.Element {
         tags={["backend", "ts"]}
         description="A small Discord bot made using Discord.Js."
         link="https://github.com/FLzyy/Dot"
+      />
+      <Project
+        name="sizet"
+        tags={["backend", "new!", "npm", "ts", "js"]}
+        description="Easily calculate sizes of any NPM package."
+        link="https://github.com/FLzyy/sizet"
+      />
+      <Project
+        name="sizet-cli"
+        tags={["backend", "new!", "npm", "cli"]}
+        description="A way to interact with sizet with an easy to use CLI tool."
+        link="https://github.com/FLzyy/sizet-cli"
       />
     </Layout>
   );
