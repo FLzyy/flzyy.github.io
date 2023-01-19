@@ -40,16 +40,6 @@ export default function Home(): JSX.Element {
               "button button--outline button--primary button--lg",
               styles.button
             )}
-            to="/projects"
-          >
-            <RepoIcon size={24} />
-            Projects
-          </Link>
-          <Link
-            className={clsx(
-              "button button--outline button--primary button--lg",
-              styles.button
-            )}
             to="https://github.com/FLzyy"
           >
             <MarkGithubIcon size={24} />

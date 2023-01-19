@@ -47,7 +47,6 @@ const config = {
         },
         hideOnScroll: true,
         items: [
-          { to: "/projects", label: "Projects", position: "right" },
           {
             label: "Github",
             href: "https://github.com/FLzyy",
