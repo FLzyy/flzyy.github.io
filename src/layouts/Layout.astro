@@ -11,11 +11,19 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/gif" href="/profile.gif" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
+		<nav class="border-b-2 border-gray-200 h-16 flex items-center px-8">
+			<img src="/profile.gif" class="h-auto w-8 rounded-md mr-3"/>
+			<h1 class="font-bold">FLzyy</h1>
+			<div class="w-full"></div>
+			<li class="list-none">
+				<ul><a class="flex flex-row items-center justify-center gap-2">Github <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></ul>
+			</li>
+		</nav>
 		<slot />
 	</body>
 </html>
