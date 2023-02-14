@@ -84,6 +84,8 @@ const { title } = Astro.props;
 </html>
 
 <script>
+  let current = "light" satisfies "light" | "dark";
+
   const toggleIcon = (isDark: boolean) => {
     const dark = document.querySelector("#icon-dark");
     const light = document.querySelector("#icon-light");
@@ -96,18 +98,30 @@ const { title } = Astro.props;
     light?.classList.remove("hidden");
   };
 
-  const setTheme = (isDark: boolean) => {
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    toggleIcon(isDark);
-  };
-
-  setTheme(
-    localStorage.getItem("theme") === "dark" ||
+  const setTheme = () => {
+    if (
+      localStorage.getItem("theme") === "dark" ||
       (!("theme" in localStorage) &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
-  );
+    ) {
+      document.documentElement.classList.add("dark");
+      current = "dark";
+      toggleIcon(true);
+    } else {
+      document.documentElement.classList.remove("dark");
+      current = "light";
+      toggleIcon(false);
+    }
+  };
+
+  setTheme();
+
+  document.querySelector("#theme-toggle")?.addEventListener("click", () => {
+    if (current === "dark") {
+      localStorage.setItem("theme", "light");
+    } else {
+      localStorage.setItem("theme", "dark");
+    }
+    setTheme();
+  });
 </script>
