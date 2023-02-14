@@ -21,9 +21,9 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
   </head>
-  <body class="h-full m-0">
+  <body class="h-full m-0 dark:bg-zinc-800 dark:text-neutral-50">
     <nav
-      class="border-b-2 border-gray-200 h-16 flex items-center px-8 w-full fixed"
+      class="border-b-2 border-gray-200 dark:border-neutral-700 h-16 flex items-center px-8 w-full fixed"
     >
       <img
         src="/profile.gif"
@@ -36,7 +36,7 @@ const { title } = Astro.props;
         <ul>
           <a
             href="https://github.com/FLzyy"
-            class="hover:fill-gray-800 transition-colors"
+            class="hover:fill-gray-800 transition-colors dark:fill-gray-50 dark:hover:fill-gray-200"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
@@ -48,8 +48,21 @@ const { title } = Astro.props;
             ></a
           >
         </ul>
+        <ul></ul>
       </li>
     </nav>
     <slot />
   </body>
 </html>
+
+<script>
+  if (
+    localStorage.getItem("theme") === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+</script>
