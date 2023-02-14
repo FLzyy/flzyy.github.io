@@ -21,9 +21,11 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
   </head>
-  <body class="h-full m-0 dark:bg-zinc-800 dark:text-neutral-50">
+  <body
+    class="h-full m-0 dark:bg-zinc-800 dark:text-neutral-50 transition-colors duration-100"
+  >
     <nav
-      class="border-b-2 border-gray-200 dark:border-neutral-700 h-16 flex items-center px-8 w-full fixed"
+      class="border-b-2 border-gray-200 dark:border-neutral-700 h-16 flex items-center px-8 w-full fixed transition-colors duration-100"
     >
       <img
         src="/profile.gif"
@@ -48,7 +50,10 @@ const { title } = Astro.props;
             ></a
           >
         </ul>
-        <div class="h-6 w-[0.1rem] bg-gray-200 dark:bg-zinc-700"></div>
+        <div
+          class="h-6 w-[0.1rem] bg-gray-200 dark:bg-zinc-700 transition-colors duration-100"
+        >
+        </div>
         <ul>
           <button
             id="theme-toggle"
@@ -125,9 +130,3 @@ const { title } = Astro.props;
     setTheme();
   });
 </script>
-
-<style>
-  * {
-    @apply transition-colors;
-  }
-</style>
