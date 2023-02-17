@@ -1,4 +1,6 @@
 ---
+import NavbarDivider from "../components/NavbarDivider.astro";
+
 export interface Props {
   title: string;
 }
@@ -50,10 +52,7 @@ const { title } = Astro.props;
             ></a
           >
         </ul>
-        <div
-          class="h-6 w-[0.1rem] bg-gray-200 dark:bg-zinc-700 transition-colors duration-100"
-        >
-        </div>
+        <NavbarDivider />
         <ul>
           <button
             id="theme-toggle"
